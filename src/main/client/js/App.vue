@@ -46,7 +46,6 @@ export default Vue.extend({
   },
   methods: {
     isSelected(navConfig: any) {
-      console.log(this.$route);
       return this.$route.path === navConfig.target;
     }
   }
