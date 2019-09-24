@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "types": ["vuetify"]
+  },
+  "include": [
+    "./src/main/client/js/**/*"
+  ]
+}
