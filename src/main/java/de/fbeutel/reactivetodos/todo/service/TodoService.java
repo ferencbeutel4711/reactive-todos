@@ -51,6 +51,14 @@ public class TodoService {
       .build());
   }
 
+  public void setTodoToDone(final String id) {
+    final Todo todo = todoRepository.findById(id).orElseThrow(RuntimeException::new);
+
+    todoRepository.save(todo.toBuilder()
+      .done(true)
+      .build());
+  }
+
   @EventListener(ApplicationReadyEvent.class)
   public void startup() throws IOException {
     todoRepository.deleteAll();

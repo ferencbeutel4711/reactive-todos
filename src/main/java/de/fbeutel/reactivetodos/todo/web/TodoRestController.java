@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,13 @@ public class TodoRestController {
   @GetMapping
   public ResponseEntity<List<Todo>> getAllTodos() {
     return ResponseEntity.ok(todoService.findAllOrderedByDueDate());
+  }
+
+  @PostMapping("/{id}/done")
+  public ResponseEntity<VerifyError> setTodoToDone(@PathVariable("id") final String id) {
+    todoService.setTodoToDone(id);
+
+    return ResponseEntity.ok().build();
   }
 
   @PostMapping
