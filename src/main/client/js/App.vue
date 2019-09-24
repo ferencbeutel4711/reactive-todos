@@ -32,12 +32,12 @@ export default Vue.extend({
       drawer: false,
       navConfigs: [
         {
-          target: '/todo',
+          target: '/',
           text: 'Home',
           icon: 'mdi-home'
         },
         {
-          target: '/todo/todos',
+          target: '/todos',
           text: 'Todos',
           icon: 'mdi-format-list-checkbox'
         }
@@ -46,8 +46,8 @@ export default Vue.extend({
   },
   methods: {
     isSelected(navConfig: any) {
-      const currentPath = window.location.pathname;
-      return currentPath === navConfig.target;
+      console.log(this.$route);
+      return this.$route.path === navConfig.target;
     }
   }
 });
