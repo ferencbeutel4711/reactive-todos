@@ -2,8 +2,8 @@
   <div class="todo-list">
     <v-list>
       <v-subheader>Todos</v-subheader>
-      <Todo v-for="todo in todos" :key="todo.id" :name="todo.name" :due-date="new Date(Date.parse(todo.dueDate))"
-            :done="todo.done"/>
+      <Todo v-for="todo in todos" :id="todo.id" :key="todo.id" :name="todo.name" :due-date="new Date(Date.parse(todo.dueDate))"
+            :initialDone="todo.done"/>
     </v-list>
   </div>
 </template>
