@@ -40,6 +40,11 @@ export default Vue.extend({
           target: '/todos',
           text: 'Todos',
           icon: 'mdi-format-list-checkbox'
+        },
+        {
+          target: '/todos/create',
+          text: 'New Todo',
+          icon: 'mdi-plus-box'
         }
       ]
     }
