@@ -44,6 +44,13 @@ public class TodoService {
     return todoRepository.findAllByOrderByDueDate();
   }
 
+  public void createTodo(final Todo todo) {
+    todoRepository.save(todo.toBuilder()
+      .id(new ObjectId().toString())
+      .done(false)
+      .build());
+  }
+
   @EventListener(ApplicationReadyEvent.class)
   public void startup() throws IOException {
     todoRepository.deleteAll();
