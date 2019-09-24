@@ -1,7 +1,9 @@
 <template>
   <div class="vue-app">
     <v-app>
-      <v-navigation-drawer :value="drawer" app clipped></v-navigation-drawer>
+      <v-navigation-drawer :value="drawer" app clipped>
+        <NavEntry :target="'/todos'" :text="'Todos'" :icon="'mdi-format-list-checkbox'"/>
+      </v-navigation-drawer>
       <v-app-bar app clipped-left>
         <v-app-bar-nav-icon v-on:click="drawer = !drawer"></v-app-bar-nav-icon>
         <v-toolbar-title>Fancy Todo List</v-toolbar-title>
@@ -18,8 +20,12 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
+import NavEntry from "./components/NavEntry.vue";
 
 export default Vue.extend({
+  components: {
+    NavEntry
+  },
   data() {
     return {
       drawer: false
