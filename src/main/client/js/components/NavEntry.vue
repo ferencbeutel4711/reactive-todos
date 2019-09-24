@@ -25,7 +25,7 @@ export default Vue.extend({
     background: rgba(0, 0, 0, 0.1);
     color: black;
     display: inline-block;
-    height: 40px;
+    height: 50px;
     padding: 4px;
     text-decoration: none;
     width: 100%;
@@ -38,7 +38,7 @@ export default Vue.extend({
   }
 
   .selected {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.15);
   }
 
   .icon {

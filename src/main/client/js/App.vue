@@ -2,7 +2,8 @@
   <div class="vue-app">
     <v-app>
       <v-navigation-drawer :value="drawer" app clipped>
-        <NavEntry :target="'/todos'" :text="'Todos'" :icon="'mdi-format-list-checkbox'"/>
+        <NavEntry v-for="navConfig in navConfigs" :target="navConfig.target" :text="navConfig.text" :icon="navConfig.icon"
+                  :selected="isSelected(navConfig)" :key="navConfig.target"/>
       </v-navigation-drawer>
       <v-app-bar app clipped-left>
         <v-app-bar-nav-icon v-on:click="drawer = !drawer"></v-app-bar-nav-icon>
@@ -28,7 +29,25 @@ export default Vue.extend({
   },
   data() {
     return {
-      drawer: false
+      drawer: false,
+      navConfigs: [
+        {
+          target: '/todo',
+          text: 'Home',
+          icon: 'mdi-home'
+        },
+        {
+          target: '/todo/todos',
+          text: 'Todos',
+          icon: 'mdi-format-list-checkbox'
+        }
+      ]
+    }
+  },
+  methods: {
+    isSelected(navConfig: any) {
+      const currentPath = window.location.pathname;
+      return currentPath === navConfig.target;
     }
   }
 });

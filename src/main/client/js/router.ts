@@ -7,10 +7,11 @@ import TodoList from "./components/TodoList.vue";
 Vue.use(VueRouter);
 
 const routes = [
-  {path: '/', component: Overview},
-  {path: '/todos', component: TodoList}
+  {path: '/todo', component: Overview},
+  {path: '/todo/todos', component: TodoList}
 ];
 
 export default new VueRouter({
+  mode: 'history',
   routes
 });
