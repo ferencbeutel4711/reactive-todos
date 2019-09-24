@@ -6,7 +6,7 @@ import Overview from './components/Overview.vue';
 Vue.use(VueRouter);
 
 const routes = [
-  {path: '/', component: Overview}
+  {path: '/', component: Overview},
 ];
 
 export default new VueRouter({
